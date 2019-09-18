@@ -95,8 +95,15 @@ namespace ConsoleApp10
             WriteToConsole(lst);
             Console.WriteLine("\n----------------------------");
 
-
-             
+            int answer2 = lst[josephus(lst.Count)];
+            Console.WriteLine(answer2);
+        }
+        public  static  int josephus(int n)
+        {
+            if (n == 1)
+                return 1;
+            else
+                return (josephus(n - 1) + 4 - 1) % n + 1;
         }
 
         public static void WriteToConsole(IEnumerable items)
